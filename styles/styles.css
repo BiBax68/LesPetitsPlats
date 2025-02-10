@@ -65,14 +65,15 @@ main {
 .recipe_card {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     border: 1px solid #1d1d1d;
     border-radius: 25px;
     overflow: hidden;
-    max-width: 25%;
     position: relative;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
+
 main .recipe_card img{
     width: 100%;
     height: 25vh;
@@ -86,4 +87,32 @@ main .recipe_card .temps_recette {
     background-color: #FFD15B;
     border-radius: 5px;
     padding: 0.2rem 0.5rem;
+}
+
+.recipe_card_area {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem 0;
+}
+
+.recipe_card h2 {
+    padding: 1rem;
+    font-size: 1.2rem;
+}
+
+.recipe_card p {
+    padding: 0 1rem;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.recipe_card ul {
+    padding: 1rem;
+    list-style: none;
+}
+
+.recipe_card ul li {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
 }
