@@ -50,3 +50,6 @@ document.addEventListener('DOMContentLoaded', () => {
 // }
 
 // init();
+
+//.include pour récupérer les recettes avec les boutons filtre
+//.filter la barre de recherche. Voir video ytb Enzo ecole du web
