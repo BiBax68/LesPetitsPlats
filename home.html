@@ -15,20 +15,72 @@
         <div class="search_area">
             <h1>Cherchez parmi plus de 1500 recettes du quotidien, simples et délicieuses</h1>
             <form class="searchbar">
-                <input type="search" placeholder="Rechercher une recette, un ingrédient,...">
+                <input type="search" placeholder="Rechercher une recette, un ingrédient,..." class="search_input">
                 <img src="./pictures/svg/Loop CTA.svg" alt="Rechercher" >
             </form>
         </div>
     </header>
     <main>
         <section class="filtres_area">
-            <div class="choix_filtres"></div>
+            <div class="choix_filtres">
+                <div class="dropdown dropdown-ingredients">
+                    <div class="dropdown-header">
+                        <span id="selected-item">Ingrédients</span>
+                        <span class="arrow">▼</span>
+                    </div>
+                    <div class="dropdown-content">
+                        <input type="text" class="searchInput" placeholder="Rechercher..." onkeyup="filterItems()">
+                        <ul id="ingredientList">
+                            <li class="dropdown-item">Crème de coco</li>
+                            <li class="dropdown-item">Jus de citron</li>
+                            <li class="dropdown-item">Glaçons</li>
+                            <li class="dropdown-item">Tomate</li>
+                            <li class="dropdown-item">Poulet</li>
+                            <li class="dropdown-item">Poivron rouge</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="dropdown dropdown-appareils">
+                    <div class="dropdown-header">
+                        <span id="selected-item">Appareils</span>
+                        <span class="arrow">▼</span>
+                    </div>
+                    <div class="dropdown-content">
+                        <input type="text" class="searchInput" placeholder="Rechercher..." onkeyup="filterItems()">
+                        <ul id="ingredientList">
+                            <li class="dropdown-item">Crème de coco</li>
+                            <li class="dropdown-item">Jus de citron</li>
+                            <li class="dropdown-item">Glaçons</li>
+                            <li class="dropdown-item">Tomate</li>
+                            <li class="dropdown-item">Poulet</li>
+                            <li class="dropdown-item">Poivron rouge</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="dropdown dropdown-ustensiles">
+                    <div class="dropdown-header">
+                        <span id="selected-item">Ustensiles</span>
+                        <span class="arrow">▼</span>
+                    </div>
+                    <div class="dropdown-content">
+                        <input type="text" class="searchInput" placeholder="Rechercher..." onkeyup="filterItems()">
+                        <ul id="ingredientList">
+                            <li class="dropdown-item">Crème de coco</li>
+                            <li class="dropdown-item">Jus de citron</li>
+                            <li class="dropdown-item">Glaçons</li>
+                            <li class="dropdown-item">Tomate</li>
+                            <li class="dropdown-item">Poulet</li>
+                            <li class="dropdown-item">Poivron rouge</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>            
             <div class="nbr_recettes"></div>
         </section>
         <section class="recipe_card_area">
         </section>
     </main>
 
-    <script type="module" src="./scripts/scripts.js"></script>
+    <script type="module" src="./scripts/events.js"></script>
 </body>
 </html>

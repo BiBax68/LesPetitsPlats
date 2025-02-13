@@ -1,15 +1,19 @@
 import { recipes } from '../json/recipes.js';
+import { handleSearch } from './search.js';
 
 
-function displayRecipes() {
+
+export function displayRecipes(recipesToDisplay = recipes) {
     const recipeCardArea = document.querySelector('.recipe_card_area');
     const recipeCounter = document.querySelector('.nbr_recettes');
     recipeCardArea.innerHTML = ''; // Vide la zone avant d'ajouter les nouvelles recettes
 
+    //Initialisation du tableau de recettes
+    let recipesArray = [...recipesToDisplay];
     // Mise à jour du compteur de recettes
     recipeCounter.textContent = `${recipes.length} recettes`;
 
-    recipes.forEach(recipe => {
+    recipesArray.forEach(recipe => {
         const recipeCard = `
             <article class="recipe_card">
                 <img src="./pictures/recipes/${recipe.image}" alt="${recipe.name}" />
@@ -32,24 +36,7 @@ function displayRecipes() {
     });
 }
 
-// Initialisation au chargement de la page
 document.addEventListener('DOMContentLoaded', () => {
-    displayRecipes();
+    displayRecipes();// Initialisation des recettes
+    handleSearch();// Initialisation de la recherche
 });
-// Exemple d'utilisation :
-// async function displayRecipes() {  ' : '
-//     recipes.forEach(recipe => {
-//         console.log(recipe);
-//     });
-// }
-
-// displayRecipes();
-
-// async function init () {
-//     const recipes = await displayRecipes();
-// }
-
-// init();
-
-//.include pour récupérer les recettes avec les boutons filtre
-//.filter la barre de recherche. Voir video ytb Enzo ecole du web
