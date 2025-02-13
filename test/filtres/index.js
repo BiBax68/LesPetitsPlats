@@ -1,9 +1,25 @@
+import { recipes } from '../../json/recipes.js';
+
+recipes.forEach(recipe => { // Pour chaque recette, récupérer les ingrédients
+    recipe.ingredients.forEach(ingredient => {
+        // Crée un nouvel élément de liste
+        const li = document.createElement("li");
+        // Ajoute le texte de l'ingrédient
+        li.textContent = ingredient.ingredient;
+        // Ajoute un écouteur d'événement pour la sélection
+        li.addEventListener("click", () => selectItem(li));
+        // Ajoute l'élément à la liste
+        document.getElementById("ingredientList").appendChild(li);
+    });
+});
+
 function toggleDropdown() {
     // Sélectionne le menu déroulant
     const dropdown = document.querySelector(".dropdown-content");
     // Alterne l'affichage du menu déroulant entre visible et caché
     dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
 }
+toggleDropdown();
 
 function selectItem(element) {
     // Récupère l'élément actuellement sélectionné
@@ -64,6 +80,7 @@ function filterItems() {
         item.style.display = item.textContent.toLowerCase().includes(input) ? "block" : "none";
     });
 }
+filterItems();
 
 // Ferme le menu si on clique ailleurs sur la page
 document.addEventListener("click", (event) => {

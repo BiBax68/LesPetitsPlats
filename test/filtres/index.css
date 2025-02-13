@@ -49,6 +49,8 @@ body {
 }
 
 .dropdown-content ul {
+    max-height: 60vh;
+    overflow-y: scroll;
     list-style: none;
     padding: 0;
     margin: 0;
