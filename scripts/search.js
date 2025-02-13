@@ -17,20 +17,6 @@ export function handleSearch() {
     // Afficher toutes les recettes au départ
     displayRecipes(recipes);
 
-    // function filterData(e) {
-    //     searchResults.innerHTML = ''; // Vide la zone de résultats
-
-    //     const searchedString = e.target.value.toLowerCase(); // Récupère la valeur de l'input en minuscules
-    //     console.log(searchedString);
-    //     const filteredArray = recipes.filter(recipe => {
-    //         return recipe.name.toLowerCase().includes(searchedString) 
-    //         || recipe.description.toLowerCase().includes(searchedString)
-    //         || recipe.ingredients.some(ing => ing.ingredient.toLowerCase().includes(searchedString));
-    //     });
-
-    //     displayRecipes(filteredArray);
-    // }
-
     function filterData(e) {
         const searchedString = e.target.value.toLowerCase().trim(); // Ajout de trim()
         

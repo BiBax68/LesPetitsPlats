@@ -2,7 +2,6 @@ import { recipes } from '../json/recipes.js';
 import { handleSearch } from './search.js';
 
 
-
 export function displayRecipes(recipesToDisplay = recipes) {
     const recipeCardArea = document.querySelector('.recipe_card_area');
     const recipeCounter = document.querySelector('.nbr_recettes');
@@ -11,7 +10,11 @@ export function displayRecipes(recipesToDisplay = recipes) {
     //Initialisation du tableau de recettes
     let recipesArray = [...recipesToDisplay];
     // Mise à jour du compteur de recettes
-    recipeCounter.textContent = `${recipes.length} recettes`;
+    if (recipesArray.length >= 1) {
+        recipeCounter.textContent = `${recipesArray.length} recettes`;
+    }else {
+        recipeCounter.textContent = `0 recette`;
+    }
 
     recipesArray.forEach(recipe => {
         const recipeCard = `
