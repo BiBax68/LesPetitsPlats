@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,8 +8,10 @@
     <title>Les petits plats</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Manrope:wght@200..800&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
     <header>
         <nav><img src="/pictures/logo/Logo.png" alt=""></nav>
@@ -16,66 +19,60 @@
             <h1>Cherchez parmi plus de 1500 recettes du quotidien, simples et délicieuses</h1>
             <form class="searchbar">
                 <input type="search" placeholder="Rechercher une recette, un ingrédient,..." class="search_input">
-                <img src="./pictures/svg/Loop CTA.svg" alt="Rechercher" >
+                <img src="./pictures/svg/Loop CTA.svg" alt="Rechercher">
             </form>
         </div>
     </header>
     <main>
         <section class="filtres_area">
-            <div class="choix_filtres">
-                <div class="dropdown dropdown-ingredients">
-                    <div class="dropdown-header">
-                        <span id="selected-item">Ingrédients</span>
-                        <span class="arrow">▼</span>
-                    </div>
-                    <div class="dropdown-content">
-                        <input type="text" class="searchInput" placeholder="Rechercher..." onkeyup="filterItems()">
-                        <ul id="ingredientList">
-                            <li class="dropdown-item">Crème de coco</li>
-                            <li class="dropdown-item">Jus de citron</li>
-                            <li class="dropdown-item">Glaçons</li>
-                            <li class="dropdown-item">Tomate</li>
-                            <li class="dropdown-item">Poulet</li>
-                            <li class="dropdown-item">Poivron rouge</li>
-                        </ul>
+            <div class="container_filter">
+                <div class="dropdown">
+                    <div class="dropdown-ingredients">
+                        <div class="dropdown-header">
+                            <span>Ingrédients</span>
+                            <span class="arrow">▼</span>
+                        </div>
+                        <div class="dropdown-content ingredients-content">
+                            <input type="text" class="searchInput" placeholder="Rechercher un ingrédient...">
+                            <ul id="ingredientList">
+                                <!-- Les ingrédients seront ajoutés ici dynamiquement -->
+                            </ul>
+                        </div>
                     </div>
                 </div>
-                <div class="dropdown dropdown-appareils">
-                    <div class="dropdown-header">
-                        <span id="selected-item">Appareils</span>
-                        <span class="arrow">▼</span>
-                    </div>
-                    <div class="dropdown-content">
-                        <input type="text" class="searchInput" placeholder="Rechercher..." onkeyup="filterItems()">
-                        <ul id="ingredientList">
-                            <li class="dropdown-item">Crème de coco</li>
-                            <li class="dropdown-item">Jus de citron</li>
-                            <li class="dropdown-item">Glaçons</li>
-                            <li class="dropdown-item">Tomate</li>
-                            <li class="dropdown-item">Poulet</li>
-                            <li class="dropdown-item">Poivron rouge</li>
-                        </ul>
+                <div class="dropdown">
+                    <div class="dropdown-appareils">
+                        <div class="dropdown-header">
+                            <span>Appareils</span>
+                            <span class="arrow">▼</span>
+                        </div>
+                        <div class="dropdown-content appareils-content">
+                            <input type="text" class="searchInput" placeholder="Rechercher un appareil...">
+                            <ul id="applianceList">
+                                <!-- Les appareils seront ajoutés ici dynamiquement -->
+                            </ul>
+                        </div>
                     </div>
                 </div>
-                <div class="dropdown dropdown-ustensiles">
-                    <div class="dropdown-header">
-                        <span id="selected-item">Ustensiles</span>
-                        <span class="arrow">▼</span>
-                    </div>
-                    <div class="dropdown-content">
-                        <input type="text" class="searchInput" placeholder="Rechercher..." onkeyup="filterItems()">
-                        <ul id="ingredientList">
-                            <li class="dropdown-item">Crème de coco</li>
-                            <li class="dropdown-item">Jus de citron</li>
-                            <li class="dropdown-item">Glaçons</li>
-                            <li class="dropdown-item">Tomate</li>
-                            <li class="dropdown-item">Poulet</li>
-                            <li class="dropdown-item">Poivron rouge</li>
-                        </ul>
+                <div class="dropdown">
+                    <div class="dropdown-ustensiles">
+                        <div class="dropdown-header">
+                            <span>Ustensiles</span>
+                            <span class="arrow">▼</span>
+                        </div>
+                        <div class="dropdown-content ustensiles-content">
+                            <input type="text" class="searchInput" placeholder="Rechercher un ustensile...">
+                            <ul id="utensilList">
+                                <!-- Les ustensiles seront ajoutés ici dynamiquement -->
+                            </ul>
+                        </div>
                     </div>
                 </div>
-            </div>            
+            </div>
             <div class="nbr_recettes"></div>
+        </section>
+        <section class="target_filter">
+            <ul class="filter_targeted"></ul>
         </section>
         <section class="recipe_card_area">
         </section>
@@ -83,4 +80,5 @@
 
     <script type="module" src="./scripts/events.js"></script>
 </body>
+
 </html>
